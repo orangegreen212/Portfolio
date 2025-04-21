@@ -1,54 +1,183 @@
+/* styles.css */
+
+/* Basic Reset and Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Используем Google Font Roboto, fallback to sans-serif */
+    line-height: 1.7; /* Улучшает читаемость параграфов */
+    margin: 0; /* Убираем дефолтный отступ body */
+    background-color: #f8f9fa; /* Очень светлый серый фон */
+    color: #343a40; /* Темно-серый текст */
+    padding: 20px; /* Внешний отступ по краям страницы */
+    min-height: 100vh; /* Гарантирует, что body занимает как минимум всю высоту вьюпорта */
+    display: flex; /* Центрируем содержимое через flexbox */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: flex-start; /* Выравниваем содержимое вверху */
 }
 
+/* Import Google Font (add this at the very top of your CSS file or in the <head> of your HTML) */
+/* <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet"> */
+/* Убедитесь, что добавили соответствующую ссылку в <head> вашего HTML! */
+
+
+/* Container Styling */
 .container {
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Используем всю доступную ширину */
+    max-width: 960px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+    background: #fff; /* Белый фон для контента */
+    padding: 30px; /* Внутренние отступы */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Мягкая тень */
 }
 
-h1, h2, h3 {
-    color: #0056b3;
+/* Header Styling */
+header {
+    text-align: center; /* Выравнивание по центру */
+    margin-bottom: 40px; /* Отступ снизу */
 }
 
-pre {
-    background-color: #e9e9e9;
-    padding: 10px;
-    border-radius: 4px;
-    overflow-x: auto; /* Добавляет скролл для длинных строк кода */
+h1 {
+    color: #0056b3; /* Цвет заголовка */
+    font-size: 2.5em; /* Размер заголовка */
+    margin-bottom: 10px; /* Отступ под h1 */
+    font-weight: 700; /* Делаем жирнее */
 }
 
-code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+.subtitle {
+    color: #6c757d; /* Более тусклый цвет для подзаголовка */
+    font-size: 1.1em;
+    margin-top: 0;
 }
 
-img {
-    max-width: 100%; /* Графики не будут вылезать за пределы контейнера */
-    height: auto;
-    display: block; /* Центрирует изображение */
-    margin: 15px auto;
-    border: 1px solid #ddd; /* Небольшая рамка вокруг графиков */
-    border-radius: 4px;
+/* Section Headings */
+h2 {
+    color: #007bff; /* Цвет подзаголовков разделов */
+    font-size: 1.8em;
+    margin-top: 30px; /* Отступ сверху */
+    margin-bottom: 15px; /* Отступ снизу */
+    border-bottom: 2px solid #007bff; /* Нижняя граница под h2 */
+    padding-bottom: 5px; /* Отступ между текстом h2 и границей */
 }
 
-.metrics p {
-    margin: 5px 0;
+h3 {
+    color: #007bff; /* Цвет подзаголовков */
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+/* Paragraphs */
+p {
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+/* Links */
+a {
+    color: #007bff; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание по умолчанию */
+    transition: color 0.3s ease; /* Плавный переход цвета при наведении */
+}
+
+a:hover {
+    color: #0056b3; /* Цвет ссылок при наведении */
+    text-decoration: underline; /* Появляется подчеркивание при наведении */
+}
+
+/* Navigation Menu */
+nav {
+    margin-top: 20px; /* Отступ сверху */
+    margin-bottom: 30px; /* Отступ снизу */
+    text-align: center; /* Выравнивание по центру */
 }
 
 nav a {
-    margin-right: 15px;
-    text-decoration: none;
-    color: #007bff;
+    margin: 0 15px; /* Отступы между ссылками */
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
+/* Lists */
+ul {
+    list-style: disc; /* Маркеры в виде точек */
+    margin-left: 20px; /* Отступ слева */
+    margin-bottom: 20px;
+    padding-left: 0; /* Убираем дефолтный padding */
 }
+
+ul li {
+    margin-bottom: 8px; /* Отступ между пунктами списка */
+}
+
+/* Code Blocks */
+pre {
+    background-color: #e9ecef; /* Светлый серый фон для кода */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Добавляет скролл для длинных строк */
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6; /* Легкая рамка */
+}
+
+code {
+    font-family: 'Source Code Pro', monospace; /* Специальный шрифт для кода */
+    font-size: 0.9em; /* Чуть меньше размер */
+    color: #212529; /* Темный цвет текста кода */
+}
+
+/* Images (Plots) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Центрирует изображение */
+    margin: 25px auto; /* Отступы сверху/снизу и авто по бокам для центрирования */
+    border: 1px solid #dee2e6; /* Легкая рамка */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Легкая тень для графиков */
+}
+
+/* Metrics Section */
+.metrics {
+    background-color: #e9ecef; /* Тот же фон, что и для кода */
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+}
+
+.metrics p {
+    margin: 5px 0; /* Меньший отступ между строками метрик */
+    font-size: 1.1em;
+}
+
+.metrics p strong {
+    color: #0056b3; /* Цвет для названий метрик */
+}
+
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px; /* Отступ сверху */
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef; /* Легкая верхняя граница */
+    color: #6c757d; /* Тусклый цвет текста футера */
+    font-size: 0.9em;
+}
+
+/* Helper class for the call to action text in the intro */
+.view-details {
+    font-style: italic;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Add more styles as needed for other sections or specific elements */
+/* .introduction, .methods-list, .data-info could have their own styles if needed */

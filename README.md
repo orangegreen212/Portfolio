@@ -75,14 +75,14 @@ On each method's page (`sarima.html`, `prophet.html`, `xgboost.html`), you will 
 
 For example:
 
-(images/SARIMA Prophet Xboost Comparison.png)
+![Comparison of Predictions on Test Set](images/SARIMA_Prophet_Xboost_Comparison.png)
 
 
 ## ✍️ Author
 
 *   Olha Shaptala
 *   [Link to your GitHub profile](https://github.com/orangegreen212)
-*   [Link to your LinkedIn profile (https://www.linkedin.com/in/olyashaptala/)
+*   [Link to your LinkedIn profile] (https://www.linkedin.com/in/olyashaptala/)
 
 ---
 

@@ -1,129 +1,115 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en"> <!-- Changed language attribute to English -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио: Метод SARIMA</title>
-    <link rel="stylesheet" href="../styles.css"> <!-- Ссылка на файл стилей на уровень выше -->
+    <title>Portfolio: SARIMA Method</title> <!-- Translated title -->
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to the stylesheet one level up -->
+    <!-- Make sure you add the Google Fonts link here as well, if you used the 'classy' CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+
         <nav>
-            <a href="../index.html">На главную</a>
-            <a href="../prophet/prophet.html">К Prophet</a>
-            <a href="../xgboost/xgboost.html">К XGBoost</a>
+            <a href="../index.html">Back to Home</a> <!-- Translated link text -->
+            <a href="../prophet/Prophet.html">Go to Prophet</a> <!-- Translated link text -->
+            <a href="../xgboost/Xgboost.html">Go to XGBoost</a> <!-- Translated link text -->
         </nav>
 
-        <h1>Метод SARIMA</h1>
+        <header>
+            <h1>SARIMA Method</h1> <!-- Translated heading -->
+        </header>
 
-        <p>
-            SARIMA (Seasonal Autoregressive Integrated Moving Average) — это классическая статистическая модель,
-            расширяющая модель ARIMA для учета сезонности во временных рядах. Она хорошо подходит для данных с
-            четко выраженными сезонными паттернами. Модель задается параметрами (p, d, q)(P, D, Q, S),
-            где (p, d, q) относятся к нестационарной части, а (P, D, Q, S) — к сезонной.
-        </p>
+        <section class="introduction">
+            <p>
+                SARIMA (Seasonal Autoregressive Integrated Moving Average) is a classical statistical model that
+                extends the ARIMA model to explicitly account for seasonality in time series data. It is well-suited
+                for data with clearly defined seasonal patterns. The model is specified by parameters (p, d, q)(P, D, Q, S),
+                where (p, d, q) relate to the non-seasonal components and (P, D, Q, S) to the seasonal components.
+            </p>
+        </section>
 
-        <h2>Используемые данные</h2>
-        <p>
-            Для демонстрации метода SARIMA использованы данные по [Краткое описание ваших данных, например, "ежедневным продажам"].
-            Данные охватывают период с [Дата начала] по [Дата окончания].
-        </p>
-        <!-- Можно вставить небольшой график исходных данных, если он сохранен -->
-        <!-- <img src="../images/raw_data_plot.png" alt="График исходных данных"> -->
+        <section class="data-info">
+            <h2>Data Used</h2> <!-- Translated heading -->
+            <p>
+                For this SARIMA demonstration, the time series data used is based on monthly data.
+                The dataset covers the period from 2014 to 2017.
+            </p>
+        </section>
 
+        <section class="code-implementation">
+            <h2>Python Implementation</h2> <!-- Translated heading -->
+            <p>
+                Below are key code snippets used to train and forecast using the SARIMA model.
+                Determining the optimal (p, d, q)(P, D, Q, S) parameters often involves analyzing ACF/PACF plots
+                or using automated parameter selection algorithms (e.g., <code>auto_arima</code>).
+            </p>
 
-        <h2>Реализация на Python</h2>
-        <p>
-            Ниже представлены ключевые фрагменты кода, использованные для обучения и прогнозирования с помощью SARIMA.
-            Для определения оптимальных параметров (p, d, q)(P, D, Q, S) может использоваться анализ ACF/PACF
-            или алгоритмы автоматического подбора (например, <code>auto_arima</code>).
-        </p>
+        </section>
 
-        <h3>Загрузка и подготовка данных:</h3>
-        <pre><code class="language-python">
-import pandas as pd
-import matplotlib.pyplot as plt
-from statsmodels.tsa.statespace.sarimax import SARIMAX
-from sklearn.metrics import mean_squared_error, mean_absolute_error
-import numpy as np
+        <section class="results-visualization">
+            <h2>Forecasting Results</h2> <!-- Translated heading -->
+            <p>
+                After training the SARIMA model, the following results were obtained on the test set and for future periods:
+            </p>
 
-# Загрузка данных (путь относительно места запуска скрипта)
-data = pd.read_csv('../data/your_data.csv')
-data['Date'] = pd.to_datetime(data['Date'])
-data.set_index('Date', inplace=True)
-ts = data['Value'] # Целевая переменная
+            <!-- Image 1: Shows a forecast into the future -->
+            <h3>SARIMA Forecast into the Future:</h3> <!-- Translated heading -->
+            <img src="../images/SARIMA_1.png" alt="SARIMA Future Forecast Plot">
+             <p>
+                This comprehensive plot shows the original training data (blue), the model's fit on the training data (green),
+                the actual values in the test set (orange), and the model's forecast on the test set (red).
+                It provides a complete picture of the model's performance across both the training and testing phases.
+            </p>
+            <!-- Image 2: Shows a zoomed-in comparison on the test set -->
+            <h3>Zoomed Comparison: Actual vs. Forecast on Test Set:</h3> <!-- Translated heading -->
+            <img src="../images/SARIMA_2.png" alt="SARIMA Test Forecast Zoom Plot">
+             <p>
+                This zoomed-in view focuses on the test period, allowing a closer look at how well the SARIMA forecast (in orange)
+                matches the actual values (in blue) during this unseen period. This helps assess the model's short-term predictive accuracy.
+            </p>
 
-# Разделение на тренировочную и тестовую выборки
-train_size = int(len(ts) * 0.8)
-train_data, test_data = ts[0:train_size], ts[train_size:]
-        </code></pre>
+             <!-- Image 3: Shows train, fit, and test forecast for region-->
+            <h3>Overall Comparison: Train, Fitted, and Forecast Data:</h3> <!-- Translated heading -->
+            <img src="../images/SARIMA_3.png" alt="SARIMA Train Fitted Forecast Plot">
+       
 
-        <h3>Обучение модели и прогнозирование:</h3>
-         <pre><code class="language-python">
-# Определение параметров (пример)
-order = (1, 1, 1)
-seasonal_order = (1, 1, 1, 12) # S=12 для месячной сезонности
+        </section>
 
-# Инициализация и обучение модели
-model = SARIMAX(train_data,
-                order=order,
-                seasonal_order=seasonal_order,
-                enforce_stationarity=False,
-                enforce_invertibility=False)
+        <section class="metrics-evaluation">
+            <h2>Performance Metrics</h2> <!-- Translated heading -->
+            <p>
+                The model's accuracy on the test set was evaluated using the following metrics:
+            </p>
+            <div class="metrics">
+                <p><strong>RMSE:</strong> [Insert RMSE value from script, e.g., 55.23]</p> <!-- Translated metric labels -->
+                <p><strong>MAE:</strong> [Insert MAE value from script, e.g., 40.15]</p>
+                <!-- Add other metrics like MAPE, etc., as needed -->
+            </div>
+        </section>
 
-results = model.fit(disp=False)
+        <section class="conclusion">
+            <h2>Conclusion on SARIMA</h2> <!-- Translated heading -->
+            <p>
+                [Brief conclusion on how well SARIMA performed on your specific data.
+                 What patterns did it capture? What were its limitations or challenges?
+                 For example: "The SARIMA model successfully captured both the overall trend and the pronounced annual seasonality in the data.
+                 However, it struggled somewhat with forecasting sharp peaks..."].
+            </p>
+        </section>
 
-# Прогнозирование на тестовой выборке
-start_index = len(train_data)
-end_index = len(ts) - 1
-predictions = results.predict(start=start_index, end=end_index, dynamic=False)
-
-# Прогноз на будущее (например, 30 шагов)
-future_steps = 30
-forecast = results.forecast(steps=future_steps)
-        </code></pre>
-
-        <h2>Результаты прогнозирования</h2>
-        <p>
-            После обучения модели SARIMA были получены следующие результаты на тестовой выборке:
-        </p>
-
-        <h3>График фактических vs. прогнозов на тестовой выборке:</h3>
-        <!-- Убедитесь, что имя файла совпадает с тем, что сохраняется в sarima_code.py -->
-        <img src="../images/sarima_actual_vs_predicted.png" alt="SARIMA фактические vs прогнозы">
-
-        <h3>Прогноз на будущее:</h3>
-        <!-- Убедитесь, что имя файла совпадает с тем, что сохраняется в sarima_code.py -->
-        <img src="../images/sarima_future_forecast.png" alt="SARIMA прогноз на будущее">
-
-
-        <h2>Метрики качества</h2>
-        <p>
-            Оценка точности модели на тестовой выборке по следующим метрикам:
-        </p>
-        <div class="metrics">
-            <p><strong>RMSE:</strong> [Вставьте значение RMSE, полученное из скрипта, например 55.23]</p>
-            <p><strong>MAE:</strong> [Вставьте значение MAE, например 40.15]</p>
-            <!-- Добавьте другие метрики при необходимости -->
-        </div>
-
-        <h2>Выводы по SARIMA</h2>
-        <p>
-            [Краткий вывод о том, как хорошо SARIMA справилась с вашими данными.
-             Какие паттерны она уловила? Какие были ограничения или сложности?
-             Например: "Модель SARIMA успешно уловила как общий тренд, так и выраженную годовую сезонность.
-             Однако, были сложности с прогнозированием резких пиков..."].
-        </p>
 
          <nav>
-            <a href="../index.html">На главную</a>
-            <a href="../prophet/prophet.html">К Prophet</a>
-            <a href="../xgboost/xgboost.html">К XGBoost</a>
+            <a href="../index.html">Back to Home</a> <!-- Translated link text -->
+            <a href="../prophet/Prophet.html">Go to Prophet</a> <!-- Translated link text -->
+            <a href="../xgboost/Xgboost.html">Go to XGBoost</a> <!-- Translated link text -->
         </nav>
 
         <footer>
-            <p>© 2023 Ваше Имя</p>
+            <p>© 2025 Olha Shaptala</p> <!-- Translated copyright -->
         </footer>
-    </div>
+
+    </div> <!-- End of container -->
 </body>
 </html>

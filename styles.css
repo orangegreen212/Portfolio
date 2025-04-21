@@ -1,0 +1,54 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+}
+
+pre {
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto; /* Добавляет скролл для длинных строк кода */
+}
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+img {
+    max-width: 100%; /* Графики не будут вылезать за пределы контейнера */
+    height: auto;
+    display: block; /* Центрирует изображение */
+    margin: 15px auto;
+    border: 1px solid #ddd; /* Небольшая рамка вокруг графиков */
+    border-radius: 4px;
+}
+
+.metrics p {
+    margin: 5px 0;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

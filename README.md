@@ -1,95 +1,89 @@
 
-## 📊 Данные
+## 📊 Data
 
-В проекте использован временной ряд по [Краткое описание вашего датасета, например, "ежедневным продажам интернет-магазина"]. Данные содержатся в файле `data/your_data.csv`. Файл должен иметь как минимум две колонки: одна с датой/временем и одна с целевым значением для прогнозирования.
+The project uses a time series dataset on Superstore dataset. The data is contained in the `data/Sample - Superstore.csv` file. The file should contain at least two columns: one for the date/time and one for the target value to be forecasted.
 
-## 🛠️ Используемые Инструменты и Библиотеки
+## 🛠️ Tools and Libraries Used
 
-Проект разработан на Python и использует следующие основные библиотеки:
+The project is developed in Python and utilizes the following main libraries:
 
-*   `pandas`: Для работы с данными.
-*   `numpy`: Для численных операций.
-*   `matplotlib`, `seaborn`: Для визуализации данных и результатов.
-*   `statsmodels`: Для реализации модели SARIMA.
-*   `prophet`: Для реализации модели Prophet.
-*   `xgboost`: Для реализации модели XGBoost.
-*   `scikit-learn`: Для метрик оценки качества (RMSE, MAE и др.).
-*   (`pmdarima`): Может использоваться для автоматического подбора параметров SARIMA (если вы его применяли).
+*   `pandas`: For data manipulation and analysis.
+*   `numpy`: For numerical operations.
+*   `matplotlib`, `seaborn`: For data and results visualization.
+*   `statsmodels`: For implementing the SARIMA model.
+*   `prophet`: For implementing the Prophet model.
+*   `xgboost`: For implementing the XGBoost model.
+*   `scikit-learn`: For evaluating forecast accuracy metrics (RMSE, MAE, etc.).
+*   (`pmdarima`): Can be used for auto-selection of SARIMA parameters.
 
-## ⚙️ Установка и Запуск
+## ⚙️ Setup and Running
 
-Чтобы запустить проект локально и просмотреть портфолио:
+To set up the project locally and view the portfolio:
 
-1.  **Клонируйте репозиторий:**
+1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/ваш_логин_github/имя_вашего_репозитория.git
-    cd имя_вашего_репозитория
+    git clone https://github.com/your_github_username/your_repository_name.git
+    cd your_repository_name
     ```
 
-2.  **Создайте виртуальное окружение (рекомендуется):**
+2.  **Create a virtual environment (recommended):**
     ```bash
     python -m venv .venv
-    # Для активации в Windows:
+    # On Windows, activate with:
     .venv\Scripts\activate
-    # Для активации в macOS/Linux:
+    # On macOS/Linux, activate with:
     source .venv/bin/activate
     ```
 
-3.  **Установите необходимые библиотеки:**
+3.  **Install the required libraries:**
     ```bash
     pip install -r requirements.txt
     ```
-    *(Если у вас нет файла `requirements.txt`, вы можете создать его вручную, перечислив библиотеки из раздела "Используемые Инструменты", или установить каждую библиотеку отдельно командой `pip install <имя_библиотеки>`)*.
+    *(If you don't have a `requirements.txt` file, you can create one manually listing the libraries from the "Tools Used" section, or install each library individually using `pip install <library_name>`)*.
 
-4.  **Поместите ваши данные:**
-    Скопируйте файл с вашими данными (`your_data.csv`) в папку `data/`.
+4.  **Place your data:**
+    Copy your data file (`Sample - Superstore.csv`) into the `data/` folder.
 
-5.  **Запустите Python скрипты:**
-    Запустите каждый из скриптов анализа для генерации прогнозов, расчетов метрик и сохранения графиков в папку `images/`. Запускать нужно из корневой директории репозитория.
+5.  **Run the Python scripts:**
+    Execute each analysis script to generate forecasts, calculate metrics, and save plots into the `images/` folder. Run these scripts from the root directory of the repository.
     ```bash
     python sarima/sarima_code.py
     python prophet/prophet_code.py
     python xgboost/xgboost_code.py
     ```
-    *(Убедитесь, что скрипты выполняются без ошибок и сообщают о сохранении графиков).*
+    *(Ensure the scripts run without errors and confirm they save the plots).*
 
-## 🌐 Просмотр Портфолио
+## 🌐 Viewing the Portfolio
 
-После выполнения всех Python скриптов:
+After successfully running all Python scripts:
 
-1.  Откройте файл `index.html` в корне репозитория с помощью любого современного веб-браузера.
-2.  На главной странице вы найдете ссылки на отдельные страницы для каждого метода, где представлены описание, код, графики и метрики.
+1.  Open the `index.html` file located in the root directory of the repository using any modern web browser.
+2.  The main page provides links to the individual pages for each method, where you can find descriptions, code snippets, plots, and metrics.
 
-## 📈 Результаты
+## 📈 Results
 
-На каждой странице метода (`sarima.html`, `prophet.html`, `xgboost.html`) вы найдете:
+On each method's page (`sarima.html`, `prophet.html`, `xgboost.html`), you will find:
 
-*   Краткое описание метода.
-*   Ключевые фрагменты Python кода.
-*   Графики, показывающие сравнение фактических значений с прогнозами на тестовой выборке.
-*   Графики прогнозов на будущий период.
-*   Метрики качества прогнозирования (RMSE, MAE и др.).
-*   Краткие выводы по работе метода на данных.
+*   A brief description of the method.
+*   Key snippets of the Python code used.
+*   Plots comparing actual values vs. forecasts on the test set.
+*   Plots showing future forecasts.
+*   Forecasting accuracy metrics (RMSE, MAE, etc.).
+*   Brief conclusions on how the method performed on the data.
 
-[Опционально: Если у вас есть возможность сгенерировать один сводный график сравнения прогнозов всех трех моделей на тестовой выборке, можно добавить его сюда в README.]
+[Optional: If you have a single combined plot comparing the forecasts of all three models on the test set, you can add it here in the README.]
 
-Например:
+For example:
 
-![Сравнение прогнозов на тестовой выборке](images/combined_test_predictions.png)
-*(Примечание: Этот график `combined_test_predictions.png` нужно сгенерировать отдельным скриптом или вручную и поместить в папку `images/`, если вы хотите его добавить).*
+![Comparison of Predictions on Test Set](images/SARIMA Prophet Xboost Comparison.png)
+*(Note: This `combined_test_predictions.png` plot would need to be generated by a separate script or manually and placed in the `images/` folder if you choose to include it).*
 
-## ✍️ Автор
+## ✍️ Author
 
-*   Ваше Имя
-*   [Ссылка на ваш GitHub профиль](https://github.com/ваш_логин_github)
-*   [Ссылка на ваш LinkedIn профиль (опционально)]
-*   [Ваш email (опционально, если хотите, чтобы с вами связались)]
-
-## 📄 Лицензия
-
-Этот проект распространяется под лицензией [Укажите лицензию, например, MIT License]. См. файл [LICENSE](LICENSE) для получения дополнительной информации.
-*(Если у вас нет файла LICENSE, можно просто написать "Без лицензии" или "Для демонстрационных целей")*.
+*   Olha Shaptala
+*   [Link to your GitHub profile](https://github.com/orangegreen212)
+*   [Link to your LinkedIn profile (https://www.linkedin.com/in/olyashaptala/)
 
 ---
 
-*Спасибо за проявленный интерес к моему портфолио! Надеюсь, оно будет полезным.*
+*Thank you for checking out my portfolio! I hope you find it informative.*

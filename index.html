@@ -1,39 +1,56 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en"> <!-- Changed language attribute to English -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио: Прогнозирование временных рядов</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Time Series Forecasting Portfolio</title> <!-- Translated title -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to styles.css remains the same -->
 </head>
 <body>
-    <div class="container">
-        <h1>Портфолио: Сравнение методов прогнозирования временных рядов</h1>
+    <div class="container"> <!-- Keeping the container for styling -->
 
-        <p>
-            Добро пожаловать в моё портфолио, посвященное анализу и прогнозированию временных рядов. В этом проекте
-            я демонстрирую применение и сравнение трех популярных методов: классической модели SARIMA,
-            библиотеки Prophet от Facebook и алгоритма градиентного бустинга XGBoost, адаптированного для временных рядов.
-        </p>
-        <p>
-            Каждый раздел содержит описание метода, ключевые фрагменты кода Python, результаты прогнозирования
-            на реальных данных и оценку точности моделей.
-        </p>
+        <header> <!-- Using header semantic tag -->
+            <h1>Time Series Forecasting Portfolio</h1> <!-- Translated main heading -->
+            <p class="subtitle">Exploring and Comparing Key Forecasting Techniques</p> <!-- Added a subtitle for flair (can be styled via CSS) -->
+        </header>
 
-        <h2>Представленные методы:</h2>
-        <ul>
-            <li><a href="sarima/SARIMA.html">SARIMA (Seasonal Autoregressive Integrated Moving Average)</a></li>
-            <li><a href="prophet/Prophet.html">Prophet (Facebook Prophet)</a></li>
-            <li><a href="xboost/Xboost.html">XGBoost (применение для временных рядов)</a></li>
-        </ul>
+        <section class="introduction"> <!-- Using section semantic tag for structure -->
+            <h2>Welcome</h2> <!-- Added a welcoming subheading -->
+            <p>
+                Welcome to my portfolio showcasing various approaches to time series analysis and forecasting. In this project,
+                I delve into the practical application and comparison of three distinct yet powerful methods:
+                the classic **SARIMA** model, Facebook's renowned **Prophet** library, and the versatile **XGBoost**
+                gradient boosting algorithm adapted for time series problems.
+            </p>
+            <p>
+                Each dedicated section provides an overview of the method, presents key Python code snippets,
+                visualizes the forecasting results on a real dataset, and evaluates model accuracy using standard metrics.
+            </p>
+        </section>
 
-        <p>
-            Данные, использованные в проекте: [Краткое описание вашего датасета, например, "Ежедневные продажи интернет-магазина"].
-        </p>
+        <section class="methods-list"> <!-- Section for the list of methods -->
+            <h2>Methods Explored:</h2> <!-- Translated heading -->
+            <ul>
+                <!-- Using lowercase filenames for consistency and better compatibility -->
+                <li><a href="sarima/sarima.html">SARIMA (Seasonal Autoregressive Integrated Moving Average)</a></li>
+                <li><a href="prophet/prophet.html">Prophet (Facebook Prophet)</a></li>
+                <li><a href="xgboost/xgboost.html">XGBoost (Application for Time Series)</a></li> <!-- Adjusted phrasing slightly -->
+            </ul>
+            <p class="view-details">Click on each method to view the detailed analysis and results.</p> <!-- Added a call to action -->
+        </section>
 
-        <footer>
-            <p>© 2023 Ваше Имя</p>
+        <section class="data-info"> <!-- Section for data information -->
+            <h2>Data Used</h2> <!-- Translated heading -->
+            <p>
+                The time series data used in this project is based on [Brief description of your dataset, e.g., "daily online store sales"].
+                The dataset is available in the `data/your_data.csv` file.
+            </p>
+        </section>
+
+        <footer> <!-- Footer remains -->
+            <p>© 2023 Your Name</p> <!-- Translated copyright -->
         </footer>
-    </div>
+
+    </div> <!-- End of container -->
 </body>
 </html>

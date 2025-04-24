@@ -71,9 +71,8 @@ On each method's page (`sarima.html`, `prophet.html`, `xgboost.html`), you will 
 *   Forecasting accuracy metrics (RMSE, MAE, etc.).
 *   Brief conclusions on how the method performed on the data.
 
-[Optional: If you have a single combined plot comparing the forecasts of all three models on the test set, you can add it here in the README.]
 
-For example:
+Comparison of Predictions on Test Set:
 
 ![Comparison of Predictions on Test Set](images/SARIMA_Prophet_Xboost_Comparison.png)
 
@@ -82,7 +81,7 @@ For example:
 
 *   Olha Shaptala
 *   [Link to your GitHub profile](https://github.com/orangegreen212)
-*   [Link to your LinkedIn profile] (https://www.linkedin.com/in/olyashaptala/)
+*   [Link to your LinkedIn profile](https://www.linkedin.com/in/olyashaptala/)
 
 ---
 

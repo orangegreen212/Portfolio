@@ -74,7 +74,7 @@ On each method's page (`sarima.html`, `prophet.html`, `xgboost.html`), you will 
 
 Comparison of Predictions on Test Set:
 
-![Comparison of Predictions on Test Set](/images/SARIMA Prophet Xboost Comparison.png)
+![Comparison of Predictions on Test Set](images/SARIMA Prophet Xboost Comparison.png)
 
 
 ## ✍️ Author
